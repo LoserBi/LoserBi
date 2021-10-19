@@ -1,0 +1,57 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+        char choice; 
+        float weight, height,invalid, BMI;
+        
+        printf(" Welcome User!\n ");
+        printf("This program is designed to help you determine your BODY MASS INDEX with the following categories: \n  Underweight=>18\n Normal Weight= 18-24.9.\n Overweight=25-29.9\n Obesity= >30 \n ");
+        printf("How would you like to calculate your Body Mass Index?.\nPlease refer to these choices given: \n ");
+        printf("To calculate the  BMI in terms of kilograms(kg) and Meters (m), Enter A.\n ");
+        printf("To calculate the BMI in terms of Pounds(lbs) and Inches (in), Enter B. \n ");
+            scanf("%c", &choice);
+             
+
+        if ( choice=='A'|| choice=='a')
+        {
+            printf("Enter your corresponding weight in (kg):\n");
+            scanf("%f", &weight);
+            printf("Enter your corresponding height in (m):\n");
+             scanf("%f", &height);
+            
+            BMI =(weight / (height * height));
+            printf(" Your BMI is: %.2f \n", BMI);
+        }
+   
+          else if (choice=='B'|| choice=='b')
+        {
+              printf("Enter your corresponding weight in (lbs):\n");
+            scanf("%f", &weight);
+            printf("Enter your corresponding height in (in):\n");
+             scanf("%f", &height);
+             BMI= ((weight/(height*height)) *703);
+              printf("Your Body Mass Index is: %f \n,",BMI);
+               
+        }
+         if (BMI >= 18 && BMI <= 24.9)
+        {
+            printf("Your Body Mass Index falls in the category of Normal Weight class\n.");
+        }
+        else if (BMI < 18)
+        {
+            printf("Your Body Mass Index falls in the Underweight Class.\n");
+        }
+        else if (BMI >= 25 && BMI <= 29.9)
+        {
+            printf("Your Body Mass Index falls in Overweight class. \n");
+        }
+        else if (BMI > 30)
+        {
+            printf(" Your Body Mass Index falls in Obesity Class.\n");
+        }
+        
+        
+        
+        return 0;
+    }
